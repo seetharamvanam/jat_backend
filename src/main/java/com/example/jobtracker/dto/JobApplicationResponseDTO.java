@@ -19,6 +19,5 @@ public class JobApplicationResponseDTO {
     private String jobTitle;
     private String jobUrl;
     private ApplicationStatus status;
-    @JsonFormat(pattern = "yyyy-MM-DD")
     private LocalDate dateApplied;
 }
