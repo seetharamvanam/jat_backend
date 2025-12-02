@@ -14,8 +14,8 @@ public class JobController {
 final JobService jobService;
 
         @GetMapping
-        public ResponseEntity<?> getAllJobs(){
-            return ResponseEntity.ok().body(jobService.getAllJobs());
+        public ResponseEntity<?> getAllJobs(@RequestParam(required = false) String Status){
+            return ResponseEntity.ok().body(jobService.getAllJobs(Status));
         }
 
         @PostMapping
@@ -26,6 +26,5 @@ final JobService jobService;
             } catch (IllegalArgumentException e) {
                 return ResponseEntity.badRequest().body(e.getMessage());
             }
-
         }
 }
